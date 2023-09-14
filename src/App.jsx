@@ -1,5 +1,7 @@
 import { BrowserRouter, Route, Routes, Outlet } from "react-router-dom";
 
+import { Login } from "./views/login.jsx";
+
 function App() {
   const basename = import.meta.env.BASE_URL;
 
@@ -13,7 +15,7 @@ function App() {
             <Route element={<h1>This is reservations</h1> } path="/reservations" />
             <Route element={<h1>This is packages</h1> } path="/packages" />
             <Route element={<h1>This is profile</h1> } path="/profile/:id" />
-            <Route element={<h1>This is login</h1> } path="/login" />
+            <Route element={<Login/>} path="/login" />
             <Route element={<h1>This is history</h1> } path="/history" />
             <Route element={<h1>This is payments</h1> } path="/payments" />
             <Route element={<h1>This is documents</h1> } path="/documents" />
