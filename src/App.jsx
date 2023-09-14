@@ -1,5 +1,7 @@
 import { BrowserRouter, Route, Routes, Outlet } from "react-router-dom";
 
+import { Navbar } from "./components/navbar.jsx";
+import { Home } from "./components/home.jsx";
 import { Login } from "./views/login.jsx";
 
 function App() {
@@ -8,9 +10,9 @@ function App() {
   return (
     <>
       <BrowserRouter basename={basename}>
-        {/*Navbar*/}
+        <Navbar />
           <Routes>
-            <Route element={<h1>This is home</h1> } path="/" />
+            <Route element={<Home/> } path="/" />
             <Route element={<h1>This is calendar</h1> } path="/calendar" />
             <Route element={<h1>This is reservations</h1> } path="/reservations" />
             <Route element={<h1>This is packages</h1> } path="/packages" />
