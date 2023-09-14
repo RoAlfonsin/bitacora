@@ -1,32 +1,25 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import { BrowserRouter, Route, Routes, Outlet } from "react-router-dom";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const basename = import.meta.env.BASE_URL;
 
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <BrowserRouter basename={basename}>
+        {/*Navbar*/}
+          <Routes>
+            <Route element={<h1>This is home</h1> } path="/" />
+            <Route element={<h1>This is calendar</h1> } path="/calendar" />
+            <Route element={<h1>This is reservations</h1> } path="/reservations" />
+            <Route element={<h1>This is packages</h1> } path="/packages" />
+            <Route element={<h1>This is profile</h1> } path="/profile/:id" />
+            <Route element={<h1>This is login</h1> } path="/login" />
+            <Route element={<h1>This is history</h1> } path="/history" />
+            <Route element={<h1>This is payments</h1> } path="/payments" />
+            <Route element={<h1>This is documents</h1> } path="/documents" />
+          </Routes>
+        {/*Footer*/}
+      </BrowserRouter>
     </>
   )
 }
